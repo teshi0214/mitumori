@@ -1,0 +1,9 @@
+[project]
+name = "mitumori"
+version = "0.1.0"
+description = "見積もり作成エージェント (ADK + Code Execution + Artifact Excel)"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["mitumori*"]
