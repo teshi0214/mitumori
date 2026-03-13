@@ -1,0 +1,12 @@
+# ユーザーIDを取得
+user_id = "default-user"
+if __user__:
+    user_id = __user__.get("id", "default-user")
+
+# セッションIDをOpen WebUIの会話IDから取得（ターン間でstateを保持するために必須）
+session_id = body.get("chat_id") or body.get("id") or f"session-{user_id}"
+
+# ...（REST API エンドポイント）...
+
+# ペイロード
+payload = {"input": {"message": user_message, "user_id": user_id, "session_id": session_id}}
